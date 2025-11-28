@@ -4,7 +4,7 @@ image:
     path: /assets/posts/2025-11-27-my-first-cves/1.png
 date: 2025-11-27 10:19:00 +/-TTTT
 categories: [Security Research]
-tags: [cve, MonicaHQ 4.1.2]
+tags: [CVE, MonicaHQ 4.1.2]
 ---
 
 
