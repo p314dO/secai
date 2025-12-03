@@ -3,8 +3,8 @@ title: Introduccion al Machine Learning
 image:
     path: /assets/posts/2025-12-03-introduccion-al-machine-learning/portada.png
 date: 2025-12-03 06:09:45 +/-TTTT
-categories: [AI]
-tags: [AI, AI Red Teamer, Machine Learning]
+categories: [AIRedTeamer]
+tags: [AI Red Teamer, Machine Learning, Artificial Intelligence, Deep Learning, HackTheBox]
 ---
 
 Los terminos Artificial Intelligence (AI) y Machine Learning (ML) estan estrechamente relacionados, pero representan conceptos distintos con aplicaciones y fundamentos teoricos especificos.

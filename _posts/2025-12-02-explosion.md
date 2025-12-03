@@ -7,7 +7,7 @@ categories: [HackTheBox]
 tags: [HackTheBox, Redis, Port 3389, RDP]
 ---
 
-INTRO
+"Explosion" is a "very easy" rated Windows machine. It is part of the Starting Point series designed for beginners to learn basic penetration testing skills, specifically focusing on the Remote Desktop Protocol (RDP).
 
 ---
 
