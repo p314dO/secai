@@ -10,6 +10,8 @@ order: 4
 I like technology!
 
 ## Certifications
+- [Offensive Security Professional Certified (OSCP+)](https://credentials.offsec.com/897984d9-2498-4a95-85b4-30c893dbedc9#acc.x1duWKDT)
+- [Offensive Security Professional Certified (OSCP)](https://credentials.offsec.com/9e81377c-c5ff-4ac9-aae9-bdc3861059ca#acc.fP9OVnLc)
 - [Certified Junior Cybersecurity Associate HTB (CJCA)](https://www.credly.com/badges/b78a1805-393c-4d48-9db3-d047ec2bb223)
 - [Certified Red Team Professional (CRTA)](https://www.credential.net/1b9ab4b4-006d-4f31-a7ca-3ec3a0538ba1#acc.e7mLu50q)
 - [Certified WiFiChallenge Professional](https://www.credential.net/b1708fc2-4af6-472e-abf5-f5abb7d6ffe2#acc.jtG2UhBL) 
