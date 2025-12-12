@@ -15,7 +15,7 @@ During an investigation on the application [Monica](https://hub.docker.com/_/mon
 
 **Description**: MonicaHQ v4.1.2 was found to contain multiple client-side injection vulnerabilities through the *first_name* and *last_name* parameters in the *Add a new relationship* function.  
 **Affected Versions**: v4.1.2  
-**Researcher**: [Nicolás Gula](https://www.linkedin.com/in/josebonzini/)  
+**Researcher**: [Nicolás Gula](https://www.linkedin.com/in/nicolasgula/)  
 **Disclosure Link**: [GitHub](https://github.com/p314dO/CVEs/tree/main/CVE-2024-54994)  
 **NIST CVE Link**: https://nvd.nist.gov/vuln/detail/CVE-2024-54994  
 
@@ -44,7 +44,7 @@ During an investigation on the application [Monica](https://hub.docker.com/_/mon
 
 **Description**: MonicaHQ v4.1.2 was found to contain multiple authenticated client-side injection vulnerabilities via the *title* and *description* parameters in */people/ID/reminders/create*.  
 **Affected Versions**: v4.1.2  
-**Researcher**: [Nicolás Gula](https://www.linkedin.com/in/josebonzini/)  
+**Researcher**: [Nicolás Gula](https://www.linkedin.com/in/nicolasgula/)  
 **Disclosure Link**: [GitHub](https://github.com/p314dO/CVEs/tree/main/CVE-2024-54996)  
 **NIST CVE Link**: https://nvd.nist.gov/vuln/detail/CVE-2024-54996  
 
@@ -69,7 +69,7 @@ During an investigation on the application [Monica](https://hub.docker.com/_/mon
 
 **Description**: MonicaHQ v4.1.1 was found to contain an authenticated client-side injection vulnerability via the input text field in */journal/entries/ID/edit*.  
 **Affected Versions**: v4.1.1  
-**Researcher**: [Nicolás Gula](https://www.linkedin.com/in/josebonzini/)  
+**Researcher**: [Nicolás Gula](https://www.linkedin.com/in/nicolasgula/)  
 **Disclosure Link**: [GitHub](https://github.com/p314dO/CVEs/tree/main/CVE-2024-54997)  
 **NIST CVE Link**: https://nvd.nist.gov/vuln/detail/CVE-2024-54997  
 
@@ -94,7 +94,7 @@ During an investigation on the application [Monica](https://hub.docker.com/_/mon
 
 **Description**: MonicaHQ v4.1.2 was found to contain an authenticated client-side injection vulnerability via the *reason* parameter in */people/h:[id]/debts/create*.  
 **Affected Versions**: v4.1.2  
-**Researcher**: [Nicolás Gula](https://www.linkedin.com/in/josebonzini/)  
+**Researcher**: [Nicolás Gula](https://www.linkedin.com/in/nicolasgula/)  
 **Disclosure Link**: [GitHub](https://github.com/p314dO/CVEs/tree/main/CVE-2024-54998)  
 **NIST CVE Link**: https://nvd.nist.gov/vuln/detail/CVE-2024-54998  
 
@@ -117,7 +117,7 @@ During an investigation on the application [Monica](https://hub.docker.com/_/mon
 
 **Description**: MonicaHQ v4.1.2 was found to contain a client-side injection vulnerability via the *last_name* parameter in the *General Information* module.  
 **Affected Versions**: v4.1.2  
-**Researcher**: [Nicolás Gula](https://www.linkedin.com/in/josebonzini/)  
+**Researcher**: [Nicolás Gula](https://www.linkedin.com/in/nicolasgula/)  
 **Disclosure Link**: [GitHub](https://github.com/p314dO/CVEs/tree/main/CVE-2024-54999)  
 **NIST CVE Link**: https://nvd.nist.gov/vuln/detail/CVE-2024-54999  
 
