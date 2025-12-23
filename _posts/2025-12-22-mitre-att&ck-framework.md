@@ -7,7 +7,7 @@ categories: [MITRE ATT&CK Framework]
 tags: [MITRE ATT&CK Framework]
 ---
 
-![image](../assets/posts/2025-12-22-mitre/ATT&CK_red.png)
+![image](./assets/posts/2025-12-22-mitre/ATT&CK_red.png)
 
 ## Introduction
 
@@ -37,27 +37,27 @@ To give you a complete picture based on the latest standards, there are three pr
 
 The matrix is organized by Tactics (the attacker's goal, e.g., "Initial Access") and Techniques (how they achieve it, e.g., "Spearphishing").
 
-![image](../assets/posts/2025-12-22-mitre/2.png)
+![image](./assets/posts/2025-12-22-mitre/2.png)
 
-![image](../assets/posts/2025-12-22-mitre/3.png)
+![image](./assets/posts/2025-12-22-mitre/3.png)
 
 ## Tactics
 
 A Tactic represents the "Why"—it is the technical goal or objective an adversary wants to achieve (e.g., gaining access, stealing data, or evading detection). Tactics are the high-level categories used to group attacker behaviors and visualize the different stages of a cyberattack.
 
-![image](../assets/posts/2025-12-22-mitre/4.png)
+![image](./assets/posts/2025-12-22-mitre/4.png)
 
 ## Techniques and Sub-Techniques
 
 While Tactics define the attacker's objective (the "Why"), Techniques and Sub-Techniques describe the specific actions and methods (the "How") used to reach that goal. These represent the primary ways an adversary performs an action. For example, under the Initial Access tactic, a common technique is Phishing.These provide a more granular level of detail. Using the Phishing example, sub-techniques specify the exact delivery method, such as Spearphishing Attachment or Spearphishing Link.
 
-![image](../assets/posts/2025-12-22-mitre/5.png)
+![image](./assets/posts/2025-12-22-mitre/5.png)
 
 ## Procedure
 
 Procedures represent the real-world implementation of techniques. While a technique is the "how," a procedure is the specific instance or "proof" of that technique in action.It identifies the exact tools, malware, or software used by a specific threat actor (e.g., AppleJeus) to carry out a technique. Procedures provide the most granular level of detail, helping security teams understand the specific patterns and "signatures" of different adversary groups.
 
-![image](../assets/posts/2025-12-22-mitre/6.png)
+![image](./assets/posts/2025-12-22-mitre/6.png)
 
 ---
 
