@@ -1,7 +1,7 @@
 ---
 title: OSINT para Rastreo de Barcos
 image:
-    path: /assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image1.png
+    path: /assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image1.png
 date: 2025-11-26 20:09:45 +/-TTTT
 categories: [OSINT]
 tags: [OSINT]
