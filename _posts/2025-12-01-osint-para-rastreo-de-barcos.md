@@ -48,7 +48,7 @@ La realidad: [Solo el 15% de los marineros recibe formación en ciberseguridad](
 
 ¿Cómo funciona [Marine Traffic](https://www.marinetraffic.com/)?
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image2.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image2.png)
 
 Marine Traffic es la plataforma más completa para rastreo de embarcaciones en tiempo real. Para entender su poder, primero necesitas conocer los tres sistemas de rastreo que utiliza simultáneamente.
 
@@ -56,21 +56,21 @@ Marine Traffic es la plataforma más completa para rastreo de embarcaciones en t
 
 El primero es el [AIS (Sistema Automático de Identificación)](https://en.wikipedia.org/wiki/Automatic_identification_system), que transmite la posición del barco en tiempo real. Aquí está el problema de seguridad que mencionamos antes: este sistema no está cifrado, lo que significa que cualquiera puede interceptar y manipular estas señales. [Desde 2014 se conoce que es vulnerable, y aún así sigue siendo el estándar de la industria.](https://www.muyseguridad.net/2014/03/26/trend-micro-vulnerabilidades-barcos/)
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image3.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image3.png)
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image4.webp)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image4.webp)
 
 ### INMARSAT
 
 El segundo sistema es el [rastreo satelital mediante INMARSAT](https://en.wikipedia.org/wiki/Inmarsat#:~:text=Inmarsat's%20network%20provides%20communications%20services,was%20completed%20in%20May%202023.), que permite seguir barcos a cualquier distancia en el mundo. Esto es especialmente útil cuando los barcos están en aguas internacionales, lejos del alcance del AIS terrestre.
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image5.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image5.png)
 
 ### Redes Moviles
 
 Finalmente, para aguas interiores y zonas costeras, Marine Traffic utiliza redes móviles. Las torres celulares cerca de puertos y ríos capturan señales de embarcaciones cercanas, complementando la cobertura del AIS.
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image6.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image6.png)
 
 ---
 
@@ -88,29 +88,29 @@ Las preguntas que puedes responder con Marine Traffic son fascinantes:
 
 **La metodología es simple pero poderosa**. Primero, abre Marine Traffic y navega hasta la región que quieres analizar. En el menú lateral derecho, encontrarás "Vessel Filters". Aquí es donde empieza la magia. Si quieres medir actividad comercial, selecciona únicamente "Cargo Vessels" (que aparecen en verde en el mapa) y "Tankers" (que aparecen en rojo).
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image7.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image7.png)
 
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image8.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image8.png)
 
 Tomemos un ejemplo real que demuestra perfectamente este concepto. En la imagen de abajo puedes ver el petrolero **"BLACKCOMB SPIRIT"** navegando cerca del [puerto de Arzew (Argelia)](https://www.marinetraffic.com/en/ais/details/ports/1332?name=ARZEW&country=Algeria).
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image9.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image9.png)
 
 Lo más revelador está en el estado de navegación: "Underway Using Engine" con datos actualizados hace apenas 22 minutos. El barco tiene un calado de 8.4m y velocidad de 2.4kn/238°. Esa velocidad extremadamente baja y el hecho de que lleva desde las 23 de ayer dando vueltas cerca del puerto te dice exactamente lo que necesitas saber: está esperando su turno para atracar.
 
 Si haces clic en "Past track" (el historial de ruta), verás exactamente por dónde ha navegado en las últimas 24 horas. Con una suscripción paga puedes ver períodos más largos. Esta función te permite rastrear rutas comerciales completas, identificar patrones, y hasta predecir comportamientos futuros.
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image10.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image10.png)
 
 Este patrón de comportamiento (velocidad reducida, navegación en círculos, cercanía al puerto pero sin atracar) es un indicador clásico de congestión portuaria o espera por ventana de atraque. Para un analista económico, ver múltiples barcos en este estado simultáneamente señalaría un cuello de botella logístico. Para un investigador, confirma que el barco está exactamente donde dice estar, sin discrepancias entre su posición AIS y su ubicación real.
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image11.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image11.png)
 
 Si haces click en "Vessel Details" inmediatamente obtienes una cantidad sorprendente de información: De donde partio y la fecha,a donde va y la fecha de arrivo(estimada).
 Puedes ver su velocidad actual, su rumbo, y hasta el tipo de carga que transporta.
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image12.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image12.png)
 
 Para un analista económico, esto es oro puro. Puedes contar cuántos barcos llegan diariamente, de qué países vienen, qué están transportando, y cuánto tiempo tardan en descargar. Todo esto sin levantarte de tu escritorio.
 
@@ -122,27 +122,27 @@ Cambiemos de escenario. Ahora eres un investigador privado rastreando a un fugit
 
 Si conoces el nombre exacto del barco, el trabajo es trivial. Ve directamente a la barra de búsqueda "Search MarineTraffic" en la parte superior, ingresa el nombre, y Marine Traffic te mostrará su ubicación exacta en tiempo real. Así de simple.
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image13.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image13.png)
 
 Pero supongamos que la situación es más compleja: solo sospechas que tu objetivo está en la zona del caribe , supongamos cerca de las islas Antigua y Barbuda, y no conoces el nombre de su embarcación. Solo sabes que es una embarcación recreativa o de pasajeros pequeña.
 
 Aquí es donde los filtros se vuelven tus mejores aliados. Regresa al menú de "Vessel Filters" y esta vez selecciona solo "Passenger Vessels" y "Pleasure Craft". Cuando apliques el filtro, la transformación del mapa es dramática. Todos esos enormes cargueros y petroleros desaparecen, y solo quedan las embarcaciones pequeñas.
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image14.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image14.png)
 
 Ahora empieza la investigación real. Pasa el cursor lentamente sobre cada embarcación. Marine Traffic te mostrará su nombre, y si hay foto disponible, también la imagen del barco. Esto es crucial porque puedes verificar visualmente si es la embarcación que buscas.
 
 Encontremos un ejemplo concreto (ACLARACION: NO ES UN YATE FUGITIVO): el "PERSEPHONE" posicionado cerca de la Isla Antigua. Al pasar el cursor, ves el nombre y una foto del yate. Los datos de posición son inquietantemente recientes: actualizados hace apenas 2 minutos. Estás viendo su ubicación prácticamente en tiempo real.
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image15.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image15.png)
 
 Haz clic en "Vessel Details" justo debajo de la imagen. Aquí la información se expande dramáticamente. Obtienes la posición GPS exacta (en este caso si tienes una cuenta que lo permita), la velocidad actual en nudos, el rumbo, la fuente de los datos (AIS/Satélite/Terrestre)..
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image16.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image16.png)
 
 Si necesitas un análisis más profundo, usa la función de "Past Track". La versión gratuita te permite ver las últimas 24 horas de movimiento trazadas en el mapa como una línea continua. Con esto puedes identificar patrones: ¿navegó directamente o hizo paradas? ¿A qué velocidad se movió? ¿Cambió de rumbo repentinamente?
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image17.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image17.png)
 
 Para investigadores privados, esta herramienta es invaluable. Lo que antes requería vigilancia física, contactos en puertos, y recursos considerables, ahora lo obtienes gratis desde tu computadora.
 
@@ -162,7 +162,7 @@ Aquí es donde la auditoría se pone realmente interesante. Supongamos que duran
 
 Toma el query básico: title:"sailor 900" y ejecútalo en SHODAN. Lo primero que verás es cuántos sistemas están expuestos globalmente. En este caso, SHODAN encuentra 4 resultados totales de sistemas VSAT Sailor 900 accesibles públicamente desde internet. Fíjate en el mapa de países: estos sistemas están distribuidos en Irán, Luxemburgo, Malasia y Estados Unidos.
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image19.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image19.png)
 
 Ahora viene lo inquietante. Cuando haces clic en uno de estos resultados, obtienes acceso a información técnica detallada. Mira este ejemplo de un sistema VSAT:
 
@@ -172,15 +172,15 @@ Ahora viene lo inquietante. Cuando haces clic en uno de estos resultados, obtien
 - Tecnologías detectadas: jQuery 1.12.4, lighttpd 1.4.48
 - Y lo más crítico: una sección completa de vulnerabilidades conocidas
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image20.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image20.png)
 
 Desplázate hacia abajo y encontrarás algo aún más preocupante: el panel muestra vulnerabilidades específicas organizadas por año. Este sistema en particular tiene CVEs desde 2019 hasta 2022. Cada una con su nivel de severidad indicado por color (rojo para crítico, naranja para alto, amarillo para medio).
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image21.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image21.png)
 
 Pero espera, hay más. Si encuentras la IP correcta y la visitas directamente en tu navegador (algo que NUNCA debes hacer sin autorización explícita del cliente), podrías encontrarte con el panel de administración completo del sistema VSAT. Mira esta captura: un dashboard de Cobham SAILOR 900 VSAT completamente accesible.
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image22.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image22.png)
 
 >Imagen tomada de [hackernoon.com](https://hackernoon.com/using-osint-for-maritime-intelligence-3lm3uht)
 
@@ -195,7 +195,7 @@ Toda esta información está disponible sin autenticación, simplemente visitand
 
 Ahora observa lo irónico de la situación. El fabricante describe el sistema SAILOR 900 VSAT Ka como "fácil de implementar" con "beneficios significativos de instalación" y "confiabilidad incomparable". El problema es que esa facilidad de implementación a menudo viene a costa de la seguridad. Muchos de estos sistemas se despliegan con configuraciones por defecto y nunca se endurecen adecuadamente.
 
-![image](/assets/posts/2025-12-01-osint-para-rastreo-de-barcos/image18.png)
+![image](/assets/posts/2025-11-26-osint-para-rastreo-de-barcos/image18.png)
 
 Tu documentación como auditor debe incluir:
 
