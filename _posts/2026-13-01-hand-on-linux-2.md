@@ -2,7 +2,7 @@
 title: Linux - 2. Reconocimiento Inicial
 image:
     path: /assets/posts/2026-01-12-hands-on-linux/1.png
-date: 2026-01-12 06:10:05 +/-TTTT
+date: 2026-01-13 06:10:05 +/-TTTT
 categories: [Linux]
 tags: [Linux, Tutorial]
 ---
