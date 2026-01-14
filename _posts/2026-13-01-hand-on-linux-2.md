@@ -7,20 +7,13 @@ categories: [Linux]
 tags: [Linux, Tutorial]
 ---
 
-## Introduccion
-
 El reconocimiento local es uno de los primeros pasos en pentesting, análisis forense y hardening. Saber quién sos en el sistema, qué kernel corre, qué grupos tenes y cómo está configurado el host permite identificar vectores de escalada de privilegios, configuraciones inseguras y superficies de ataque locales.
-
 Cuando trabajamos con Linux —especialmente en ciberseguridad— no basta con “saber usar la terminal”.
 Necesitamos **entender exactamente dónde estamos parados dentro del sistema**.
-
 Imagina que acabas de conseguir acceso a un sistema Linux.
 Puede ser tu propio servidor, una máquina de laboratorio… o un shell reverso durante un pentest.
-
 Antes de tocar nada, antes de ejecutar exploits o herramientas avanzadas, hay una pregunta clave:
-
 **¿Qué sistema es este… y quién soy yo dentro de él?**
-
 Eso es lo que vamos a aprender hoy.
 
 ## Nombre del host

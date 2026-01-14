@@ -7,8 +7,6 @@ categories: [Linux]
 tags: [Linux, Tutorial]
 ---
 
-## Introduccion
-
 Cuando uno empieza a usar Linux, especialmente si viene de otros sistemas operativos, hay algo que genera mucha frustración muy rápido. Abrís la terminal, ejecutás un comando, y de repente aparecen un montón de opciones raras: guiones, letras sueltas, palabras largas con doble guion… y la sensación es siempre la misma: “¿cómo se supone que memorice todo esto?”.
 
 La respuesta es simple y, al mismo tiempo, liberadora: no tenés que memorizar nada. En Linux, y más aún en ciberseguridad, lo importante no es saber todo de memoria, sino saber cómo pedir ayuda en el momento correcto.
