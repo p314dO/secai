@@ -106,7 +106,7 @@ Si dominás cómo pedir ayuda en Linux, ya estás un paso adelante como profesio
 
 ## Video del post
 
-{% include embed/youtube.html id='K78qAbaEEDg' %}
+{% include embed/youtube.html id='IdVj-YxiKaU' %}
 
 ## Ejercicios Practicos
 

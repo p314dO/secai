@@ -154,7 +154,7 @@ Dominar esto ahora te evitara errores graves más adelante.
 
 ## Video del post
 
-{% include embed/youtube.html id='iSAbShLeYg4' %}
+{% include embed/youtube.html id='M4FnG4U2eXU' %}
 
 ## Ejercicios Practicos
 
