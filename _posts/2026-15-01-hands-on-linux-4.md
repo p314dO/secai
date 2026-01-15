@@ -118,6 +118,72 @@ En los próximos videos vamos a explorar técnicas avanzadas como la redirecció
 
 {% include embed/youtube.html id='YtXdTRM90mQ' %}
 
-### **TU MISIÓN AHORA**
+## **TU MISIÓN AHORA**
 
 Por ahora, tu tarea es clara: practica estos comandos hasta que los ejecutes sin pensar. La diferencia entre un pentester junior y uno senior no está en las herramientas que usa, sino en lo fluido que es con los fundamentos.
+
+### **Ejercicio 1: Organización Básica de Proyecto de Pentest (Básico)**
+
+Crea la siguiente estructura de directorios para organizar un proyecto de pentesting:
+```
+PentestCliente2025/
+├── Reconocimiento/
+├── Escaneo/
+├── Explotacion/
+├── PostExplotacion/
+└── Reportes/
+```
+
+Dentro de cada carpeta, crea un archivo notas.txt.
+**Pista**: Usa mkdir -p y múltiples comandos touch o aprovecha las rutas.
+Comandos esperados:
+```
+mkdir -p PentestCliente2025/{Reconocimiento,Escaneo,Explotacion,PostExplotacion,Reportes}
+touch PentestCliente2025/*/notas.txt
+```
+
+### **Ejercicio 2: Gestión de Evidencias (Intermedio)**
+
+1. Crea un directorio llamado `Evidencias`
+2. Dentro, crea tres subdirectorios: `Originales`, `Procesadas`, `Backup`
+3. En `Originales`, crea tres archivos: `captura1.pcap`, `log_sistema.txt`, `hash_passwords.txt`
+4. Copia todos los archivos de `Originales` a `Backup`
+5. Mueve solo `hash_passwords.txt` de `Originales` a `Procesadas`
+6. Renombra `hash_passwords.txt` en `Procesadas` a `passwords_descifrados.txt`
+
+**Objetivo:** Simular el flujo de trabajo de un analista de seguridad manejando evidencias digitales.
+
+**Validación:** Ejecuta `tree Evidencias` y deberías ver:
+- `Backup` con 3 archivos
+- `Originales` con 2 archivos (sin hash_passwords.txt)
+- `Procesadas` con passwords_descifrados.txt
+
+---
+
+### **Ejercicio 3: Desafío - Organización Rápida en Escenario Real (Avanzado)**
+
+Imagina que acabas de comprometer un servidor y tienes acceso limitado por tiempo. Necesitas:
+
+1. Crear esta estructura en menos de 30 segundos:
+```
+Exfiltracion_ServerXYZ/
+├── Configuraciones/
+│   ├── apache/
+│   └── ssh/
+├── Logs/
+│   ├── access/
+│   └── error/
+└── Credenciales/
+    ├── usuarios.txt
+    └── hashes.txt
+```
+Crear 5 archivos vacíos de respaldo llamados backup1.tar.gz hasta backup5.tar.gz en un directorio llamado Backups
+
+Desafío adicional: Hazlo usando el menor número posible de comandos (máximo 5 líneas).
+Pista para el desafío:
+```
+mkdir -p Exfiltracion_ServerXYZ/{Configuraciones/{apache,ssh},Logs/{access,error},Credenciales,Backups}
+touch Exfiltracion_ServerXYZ/Credenciales/{usuarios,hashes}.txt
+touch Exfiltracion_ServerXYZ/Backups/backup{1..5}.tar.gz
+```
+Objetivo: Desarrollar velocidad y eficiencia en la terminal bajo presión. Usa time antes de tus comandos para medir tu velocidad.
