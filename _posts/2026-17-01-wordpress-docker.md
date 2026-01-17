@@ -9,6 +9,13 @@ tags: [Wordpress, Tutorial]
 
 Docker revolutionizes how penetration testers create practice environments. Instead of spending hours configuring a traditional LAMP stack on a virtual machine, you can deploy a fully functional, intentionally vulnerable WordPress instance in minutes. This lab will be accessible from your Kali Linux VM, allowing you to practice real-world WordPress pentesting techniques including enumeration with WPScan, exploitation of vulnerable plugins, SQL injection, and post-exploitation in a safe, controlled, and reproducible environment.
 
+
+>⚠️ CRITICAL: Everything you've learned today is for:    
+✅ Educational purposes only  
+✅ Testing systems you OWN   
+✅ Authorized penetration testing with written permission  
+✅ Improving your defensive security knowledge  
+
 ## Introduction
 
 If you've ever set up a [WordPress lab](https://p314do.github.io/secai/posts/build-your-own-wordpress/) the traditional way—installing Ubuntu Server, configuring Apache, MySQL, PHP, downloading WordPress, setting permissions—you know it can take 30-60 minutes and consume significant resources.
@@ -754,7 +761,54 @@ exit
 
 ![Image](./assets/posts/2026-14-01-build-your-own-wordpress/93.png)
 
+**I. Add Vulnerable Plugins:BONUS!!!**
+
+Vulnerability [WordPress Plugin Appointment Booking Calendar 1.3.34](https://www.exploit-db.com/exploits/48204)
+
+```
+sudo docker exec -it wordpress-app bash
+cd /var/www/html/wp-content/plugins
+wget https://downloads.wordpress.org/plugin/appointment-booking-calendar.1.3.34.zip
+unzip appointment-booking-calendar.1.3.34.zip
+rm -rf appointment-booking-calendar.1.3.34.zip
+chown -R www-data:www-data appointment-booking-calendar
+exit
+```
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/94.png)
+
+Vulnerability [WordPress Plugin Work The Flow File Upload 2.5.2 - Arbitrary File Upload](https://www.exploit-db.com/exploits/36640)
+
+```
+sudo docker exec -it wordpress-app bash
+cd /var/www/html/wp-content/plugins
+wget git clone --branch 2.5.2 https://github.com/wp-plugins/work-the-flow-file-upload.git
+chown -R www-data:www-data work-the-flow-file-upload
+exit
+```
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/95.png)
 
 ---
 
-## PART 8: INITIAL RECONNAISSANCE FROM KALI
+## NEXT STEPS
+
+Congratulations! You've successfully built a professional-grade, intentionally vulnerable WordPress penetration testing laboratory using Docker. This is a massive achievement that puts you ahead of most aspiring ethical hackers.
+
+✅ Installed Docker on Ubuntu Desktop with proper configuration  
+✅ Created a multi-container environment with WordPress, MySQL, and PHPMyAdmin  
+✅ Configured intentional vulnerabilities across the entire stack  
+✅ Set up network access from your Kali Linux pentesting VM  
+✅ Enabled XML-RPC for multiple attack vectors  
+✅ Exposed MySQL on port 3306 for direct database exploitation  
+✅ Installed vulnerable plugins ready for exploitation  
+✅ Built a reproducible lab that you can reset in seconds  
+
+**What's Coming Next: The Pentesting Series**
+
+This lab is just the beginning. In the next posts, we will begin to learn about WordPress, its structure, manual enumeration and we'll systematically exploit every vulnerability we've configured, teaching you real-world penetration testing techniques used by professional ethical hackers.
+
+## Final Thoughts
+Building this lab is more than just following instructions—it's about understanding how modern web applications work, how they can be broken, and most importantly, how to defend them.
+Every vulnerability you'll exploit in this series existed in real-world WordPress installations. By learning to attack them in your safe lab, you're preparing to defend them in production environments.
+The cybersecurity industry desperately needs skilled professionals who understand both offense and defense. You're on the right path.
+Keep learning. Keep practicing. Keep hacking ethically.
