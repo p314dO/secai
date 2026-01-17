@@ -194,7 +194,7 @@ Estos comandos son tus fundamentos. Son las bases sobre las que construirás tod
 
 ## Video del post
 
-{% include embed/youtube.html id='JrYxIFYsz_o' %}
+{% include embed/youtube.html id='rr1chvxK1pM' %}
 
 ---
 
