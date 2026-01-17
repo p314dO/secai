@@ -459,4 +459,302 @@ ip addr show
 
 ## PART 5: COMPLETING WORDPRESS INSTALLATION
 
-Si estas viendo esto...aun no lo termine. Tengo ganas de dormir...lo terminare pronto. Bye!!
+**STEP 1: Access WordPress from Ubuntu Desktop**
+
+Open Firefox or Chrome in Ubuntu and navigate to: [http://localhost:8080](http://localhost:8080).  
+You should see the WordPress installation wizard.
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/65.png)
+
+**STEP 2: Select Language**
+
+Choose your preferred language (English recommended for consistency with pentesting tools) and click Continue.
+
+**STEP 3: Complete Installation Form**
+
+Fill in the following:  
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/66.png)
+
+> 🎯 Pentesting Note: We're using common, weak credentials (admin:admin123) intentionally. This makes the lab realistic for practicing:
+
+- Brute force attacks
+- Credential stuffing
+- Default credential exploitation
+
+Click "Install WordPress"
+
+**STEP 4: Login to WordPress**
+
+You should see "Success!" Click Log In.
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/67.png)
+
+Enter:  
+- **Username**: admin    
+- **Password**: admin123
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/68.png)
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/69.png)
+
+Welcome to your WordPress admin dashboard!
+
+---
+
+## PART 6: ACCESSING THE LAB FROM KALI LINUX
+
+Now let's configure access from your Kali Linux pentesting machine.
+**STEP 1: Verify Network Connectivity**
+
+From your Kali Linux VM, open a terminal and ping the Ubuntu VM:
+```
+ping -c 4 192.168.1.195
+```
+You should see responses:
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/70.png)
+
+Press Ctrl + C to stop.  
+If ping fails:
+1. Check VM network settings:
+- Both VMs should be on Bridged Adapter (same physical network)
+- Or both on Internal Network with same network name
+- Or NAT Network (not simple NAT)
+
+2. Check Ubuntu firewall:
+```
+# On Ubuntu
+   sudo ufw status
+```
+
+If active, allow the necessary ports:
+```
+sudo ufw allow 8080/tcp
+sudo ufw allow 3306/tcp
+sudo ufw allow 8081/tcp
+```
+
+3. Verify containers are listening on all interfaces:
+
+```
+# On Ubuntu
+sudo netstat -tulpn | grep 8080
+```
+
+Should show `0.0.0.0:8080` not `127.0.0.1:8080`
+
+**STEP 2: Access WordPress from Kali**
+
+From Kali Linux, open a browser and navigate to:
+```
+http://192.168.1.195:8080/
+```
+(Use your Ubuntu VM's actual IP)
+
+You should see the WordPress site!
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/71.png)
+
+Try accessing PHPMyAdmin.
+
+```
+http://192.168.1.195:8081
+```
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/72.png)
+
+Login with:
+- Server: db (or leave empty)
+- Username: root
+- Password: toor123 (from your .env file)
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/73.png)
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/74.png)
+
+**STEP 3: Verify Direct MySQL Access**
+From Kali, test MySQL connection:
+
+Enter password: `toor123`
+
+```
+mysql -h 192.168.1.195 -P 3306 -u root -p --ssl-verify-cert=OFF
+```
+
+If connected, you'll see:
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/75.png)
+
+
+Type `exit;` to disconnect.
+This confirms SQLMap and other tools can access the database directly.
+
+---
+
+
+## PART 7: MAKING WORDPRESS INTENTIONALLY VULNERABLE
+
+Now let's add specific vulnerabilities for pentesting practice.
+
+**1: Install Vulnerable Plugins**  
+
+**A. File Manager 6.0 (Vulnerable - CVE-2020-25213)**
+
+```
+docker exec -it wordpress-app bash
+cd /var/www/html/wp-content/plugins
+wget https://downloads.wordpress.org/plugins/wp-file-manager.6.0.zip
+unzip wp-file-manager.6.0.zip
+unzip wp-file-manager/wp-file-manager.6.0.zip
+chown -R www-data:www-data file-manager
+exit
+```
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/78.png)
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/79.png)
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/81.png)
+
+Now activate the plugin from WordPress:
+- Go to Plugins → Installed Plugins
+- Search for ‘File Manager’
+- Click on Activate
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/80.png)
+
+**B. Mail Masta (LFI Vulnerability)**
+
+```
+docker exec -it wordpress-app bash
+cd /var/www/html/wp-content/plugins
+apt install git
+```
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/82.png)
+
+```
+apt update
+apt install git -y
+```
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/83.png)
+
+```
+git clone https://github.com/p314dO/mail-masta.git
+```
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/84.png)
+
+Vulnerability: [Local File Inclusion allowing reading sensitive files](https://www.exploit-db.com/exploits/50226)
+Activate from admin panel.
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/85.png)
+
+**C. Social Warfare (RCE)**
+
+```
+docker exec -it wordpress-app bash
+cd /var/www/html/wp-content/plugins
+wget https://downloads.wordpress.org/plugin/social-warfare.3.5.2.zip
+unzip social-warfare.3.5.2.zip
+rm -rf social-warfare.3.5.2.zip
+chown -R www-data:www-data social-warfare
+exit
+```
+Vulnerability: [CVE-2019-9978 - Remote Code Execution](https://unit42.paloaltonetworks.com/exploits-in-the-wild-for-wordpress-social-warfare-plugin-cve-2019-9978/)   
+Activate from admin panel.
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/86.png)
+
+**D. XMLRPC Available**
+
+List available methods.
+```
+curl -X POST -d '<?xml version="1.0"?><methodCall><methodName>system.listMethods</methodName></methodCall>' http://localhost:8080/xmlrpc.php
+```
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/87.png)
+
+List available capabilities.
+
+```
+curl -X POST -d '<?xml version="1.0"?><methodCall><methodName>system.getCapabilities</methodName></methodCall>' http://localhost:8080/xmlrpc.php
+```
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/88.png)
+
+
+**E. Allow User Registration**
+1. Go to Settings → General
+2. Check "Anyone can register"
+3. Set New User Default Role to Subscriber (or Editor for more access)
+4. Click Save Changes
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/89.png)
+
+This allows attackers to create accounts, useful for practicing privilege escalation.  
+
+**F. Disable Comment Moderation**
+1. Go to Settings → Discussion
+2. Uncheck "Comment must be manually approved"
+3. Uncheck "Comment author must have a previously approved comment"
+4. Click Save Changes
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/90.png)
+
+This enables comment-based XSS injection practice.
+
+**F. Use Predictable Permalinks**
+1. Go to Settings → Permalinks
+2. Select "Day and name" or "Numeric"
+3. Click Save Changes
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/91.png)
+
+Makes enumeration easier for pentesting practice.
+
+**G. Create Vulnerable Users**
+
+From Users → Add New, create several users:  
+
+| Username     | Email              | Role       | Password   |
+|--------------|--------------------|------------|------------|
+| editor1      | editor@lab.local   | Editor     | editor123  |
+| author1      | author@lab.local   | Author     | author123  |
+| subscriber1  | sub@lab.local      | Subscriber | sub123     |
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/92.png)
+
+These provide targets for:  
+- User enumeration
+- Brute force attacks
+- Privilege escalation practice
+
+**H. Add Vulnerable Themes**
+
+Twentyfifteen.2.0
+```
+sudo docker exec -it wordpress-app bash
+cd /var/www/html/wp-content/themes
+wget https://downloads.wordpress.org/theme/twentyfifteen.2.0.zip
+unzip twentyfifteen.2.0.zip
+rm -rf twentyfifteen.2.0.zip
+chown -R www-data:www-data twentyfifteen
+exit
+```
+
+Twentyseventeen
+```
+docker exec -it wordpress-app bash
+cd /var/www/html/wp-content/themes
+wget https://downloads.wordpress.org/theme/twentyseventeen.1.0.zip
+unzip twentyfifteen.2.0.zip
+rm -rf twentyfifteen.2.0.zip
+chown -R www-data:www-data twentyfifteen
+exit
+```
+
+![Image](./assets/posts/2026-14-01-build-your-own-wordpress/93.png)
+
+
+---
+
+## PART 8: INITIAL RECONNAISSANCE FROM KALI
