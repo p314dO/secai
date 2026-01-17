@@ -2,7 +2,7 @@
 title: Wordpress - 2. Build your own lab with Docker
 image:
     path: /assets/posts/2026-14-01-build-your-own-wordpress/1.png
-date: 2026-01-16 06:48:05 +/-TTTT
+date: 2026-01-17 06:48:05 +/-TTTT
 categories: [Wordpress]
 tags: [Wordpress, Tutorial]
 ---
