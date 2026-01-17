@@ -1,5 +1,5 @@
 ---
-title: Build your own lab for Wordpress
+title: Wordpress - 1. Build your own lab
 image:
     path: /assets/posts/2026-14-01-build-your-own-wordpress/1.png
 date: 2026-01-15 06:48:05 +/-TTTT
