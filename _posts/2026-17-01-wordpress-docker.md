@@ -7,6 +7,8 @@ categories: [Wordpress]
 tags: [Wordpress, Tutorial]
 ---
 
+
+
 Docker revolutionizes how penetration testers create practice environments. Instead of spending hours configuring a traditional LAMP stack on a virtual machine, you can deploy a fully functional, intentionally vulnerable WordPress instance in minutes. This lab will be accessible from your Kali Linux VM, allowing you to practice real-world WordPress pentesting techniques including enumeration with WPScan, exploitation of vulnerable plugins, SQL injection, and post-exploitation in a safe, controlled, and reproducible environment.
 
 
@@ -15,6 +17,8 @@ Docker revolutionizes how penetration testers create practice environments. Inst
 ✅ Testing systems you OWN   
 ✅ Authorized penetration testing with written permission  
 ✅ Improving your defensive security knowledge  
+
+### ⚠️ If you are not interested in this POST the lab code [is here](https://github.com/p314dO/VulnpreX).
 
 ## Introduction
 
