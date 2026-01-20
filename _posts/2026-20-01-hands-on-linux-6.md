@@ -261,11 +261,3 @@ Mi recomendación: practica estos comandos hasta que se vuelvan segunda naturale
 
 
 
-
-
-
-
-## Video del post
-
-{% include embed/youtube.html id='' %}
-
