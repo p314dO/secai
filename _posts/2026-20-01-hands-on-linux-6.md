@@ -134,7 +134,6 @@ Esta herramienta es como el hermano rápido pero menos preciso de `find`. No bus
 
 Primero actualizas la base de datos:
 
-[VISUAL: Terminal ejecutando `sudo updatedb` con barra de progreso]
 
 ```bash
 sudo updatedb
@@ -192,9 +191,8 @@ Pero lo realmente poderoso para pentesting son las búsquedas recursivas en dire
 ```bash
 grep -r -i "password" /etc/ 2>/dev/null
 ```
-![alt text](/assets/posts/2026-01-12-hands-on-linux/61.png)
-
 Esto busca "password" (ignorando mayúsculas con `-i`) en TODOS los archivos dentro de /etc/.
+![alt text](/assets/posts/2026-01-12-hands-on-linux/61.png)
 
 Buscar claves API:
 ```bash
@@ -240,7 +238,7 @@ Mi recomendación: practica estos comandos hasta que se vuelvan segunda naturale
 
 ## Video del post
 
-{% include embed/youtube.html id='TU_VIDEO_ID_AQUI' %}
+{% include embed/youtube.html id='rBy2II89deI' %}
 
 ## Ejercicios Practicos
 
